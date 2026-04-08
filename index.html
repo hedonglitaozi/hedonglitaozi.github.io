@@ -1,189 +1,349 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>个人主页</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人主页</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f7f8fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: #2d3748;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .nav-logo {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #63b3ed;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #4299e1, #667eea);
+      color: white;
+      text-align: center;
+      padding: 6rem 0;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #fffa;
+      font-weight: bold;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #2d3748;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      color: #2d3748;
+    }
+
+    .project-year {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    .project-description {
+      margin-bottom: 1rem;
+      color: #4a5568;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: #e6fffa;
+      color: #234e52;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .awards-section {
+      background: white;
+    }
+
+    .awards-timeline {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .award-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+
+    .award-year {
+      background: #4299e1;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 99px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .award-content h3 {
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
+
+    .award-description {
+      color: #718096;
+    }
+
+    .footer {
+      background: #2d3748;
+      color: #e2e8f0;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  </style>
 </head>
-  <body>
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="#" class="nav-logo">我的主页</a>
-        <ul class="nav-menu">
-          <li><a href="#about" class="nav-link">关于我</a></li>
-          <li><a href="#projects" class="nav-link">项目经历</a></li>
-          <li><a href="#awards" class="nav-link">获奖情况</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <main>
-      <section id="about" class="section hero-section">
-        <div class="container">
-          <div class="hero-content fade-in">
-            <h1 class="hero-title">你好，我是<span class="highlight">张三</span></h1>
-            <p class="hero-subtitle">全栈开发工程师 | 创新者 | 终身学习者</p>
-            <p class="hero-description">
-              热爱技术，专注于构建优雅的解决方案。擅长前端开发、后端架构设计，
-              致力于用代码创造价值，用技术改变生活。
-            </p>
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">项目</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">奖项</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">我的主页</a>
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">关于我</a></li>
+        <li><a href="#projects" class="nav-link">项目经历</a></li>
+        <li><a href="#awards" class="nav-link">获奖情况</a></li>
+      </ul>
+    </div>
+  </nav>
 
-
-      
-      <section id="projects" class="section">
-        <div class="container">
-          <h2 class="section-title">项目经历</h2>
-          <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">智能数据分析平台</h3>
-                <span class="project-year">2024</span>
-              </div>
-              <p class="project-description">
-                基于 Vue3 + Node.js 开发的企业级数据分析平台，支持实时数据可视化、
-                多维度分析和自定义报表生成，服务超过 10000+ 用户。
-              </p>
-              <div class="project-tags">
-                <span class="tag">Vue3</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">ECharts</span>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">在线教育管理系统</h3>
-                <span class="project-year">2023</span>
-              </div>
-              <p class="project-description">
-                全栈开发的在线教育平台，包含课程管理、作业提交、在线测验等功能，
-                采用微服务架构，支持高并发访问。
-              </p>
-              <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">MySQL</span>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">移动端电商应用</h3>
-                <span class="project-year">2023</span>
-              </div>
-              <p class="project-description">
-                使用 React Native 开发的跨平台电商应用，集成支付、物流追踪、
-                用户评价等功能，优化性能达到流畅的用户体验。
-              </p>
-              <div class="project-tags">
-                <span class="tag">React Native</span>
-                <span class="tag">Redux</span>
-                <span class="tag">Firebase</span>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">开源组件库</h3>
-                <span class="project-year">2022</span>
-              </div>
-              <p class="project-description">
-                设计并开发轻量级 UI 组件库，提供 30+ 常用组件，支持主题定制，
-                在 GitHub 上获得 2000+ stars。
-              </p>
-              <div class="project-tags">
-                <span class="tag">TypeScript</span>
-                <span class="tag">Vite</span>
-                <span class="tag">CSS-in-JS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      
-      <section id="awards" class="section awards-section">
-        <div class="container">
-          <h2 class="section-title">获奖情况</h2>
-          <div class="awards-timeline">
-            <div class="award-item">
-              <div class="award-year">2024</div>
-              <div class="award-content">
-                <h3 class="award-title">全国大学生软件创新大赛一等奖</h3>
-                <p class="award-description">
-                  凭借"智能健康管理系统"项目获得全国一等奖，该项目结合AI技术为用户提供个性化健康建议
-                </p>
-              </div>
-            </div>
-
-            <div class="award-item">
-              <div class="award-year">2023</div>
-              <div class="award-content">
-                <h3 class="award-title">ACM-ICPC 区域赛银奖</h3>
-                <p class="award-description">
-                  在国际大学生程序设计竞赛中展现出色的算法能力和团队协作精神
-                </p>
-              </div>
-            </div>
-
-            <div class="award-item">
-              <div class="award-year">2023</div>
-              <div class="award-content">
-                <h3 class="award-title">优秀开源贡献者</h3>
-                <p class="award-description">
-                  为多个知名开源项目贡献代码，被社区评为年度优秀贡献者
-                </p>
-              </div>
-            </div>
-
-            <div class="award-item">
-              <div class="award-year">2022</div>
-              <div class="award-content">
-                <h3 class="award-title">黑客马拉松最佳创意奖</h3>
-                <p class="award-description">
-                  在24小时黑客马拉松中开发创新解决方案，获得评委一致认可
-                </p>
-              </div>
-            </div>
-
-            <div class="award-item">
-              <div class="award-year">2022</div>
-              <div class="award-content">
-                <h3 class="award-title">国家奖学金</h3>
-                <p class="award-description">
-                  以优异的学术成绩和综合表现获得国家奖学金
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
+  <main>
+    <section id="about" class="section hero-section">
       <div class="container">
-        <p>&copy; 2024 个人主页. All rights reserved.</p>
+        <div class="hero-content fade-in">
+          <h1 class="hero-title">你好，我是<span class="highlight">核动力桃子（高泽宇）</span></h1>
+          <p class="hero-description">
+            热爱技术，专注于构建优雅的解决方案。
+            致力于用代码改变生活。
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">项目</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">奖项</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </section>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">项目经历</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">基于 ros 系统的活性炭上料机器人设计</h3>
+              <span class="project-year">2024</span>
+            </div>
+            <p class="project-description">
+              负责视觉模块的设计与实现，基于 Python 编写位姿估计算法，支撑机械臂精准抓取。
+            </p>
+              采用“眼在手外”部署方案，通过 OpenCV 库实现图像预处理，融合 YOLO v8 目标检测算法与深度相机距离信息，构建多维度位姿估计模型。
+            </p>
+              完成视觉模块性能测试与优化，最终无干扰场景识别准确率 100%，复杂干扰场景 97.1%
+            </p>
+            </p>
+            <div class="project-tags">
+              <span class="tag">ros</span>
+              <span class="tag">YOLO</span>
+              <span class="tag">OpenCV</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">基于陀螺仪与毫米波雷达融合的老年人跌倒智能检测系统设计</h3>
+              <span class="project-year">2025</span>
+            </div>
+            <p class="project-description">
+              主导项目全流程，针针对微多普勒频谱图时序特征提取痛点，设计 CNN-GRU-注意力混合网络，通过纵向卷积保留时序信息、注意力机制聚焦跌倒关键帧，解决传统模型时序丢失问题，基于 PyTorch 完成模型训练与部署。
+            <p class="project-description"></p>
+              多模态融合：设计“高置信雷达优先+陀螺仪触发降阈值”决策策略，弥补单一模态短板，
+              室内封闭场景跌倒检测准确率达 98.73%。
+            </p>
+            <div class="project-tags">
+              <span class="tag">Matlab</span>
+              <span class="tag">PyTorch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="section awards-section">
+      <div class="container">
+        <h2 class="section-title">获奖情况</h2>
+        <div class="awards-timeline">
+          <div class="award-item">
+            <div class="award-year">2025</div>
+            <div class="award-content">
+              <h3 class="award-title">中国高校智能机器人创意大赛 三等奖</h3>
+              </p>
+              <h3 class="award-title">全国大学生电子设计竞赛（TI 杯）上海赛区 三等奖</h3>
+              </p>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <div class="award-year">2024</div>
+            <div class="award-content">
+              <h3 class="award-title">蓝桥杯上海赛区 C/C++程序设计大学 B 组 二等奖</h3>
+              </p>
+              <h3 class="award-title">中国国际大学生创新大赛 校三等奖</h3>
+              </p>
+              <h3 class="award-title">校专业奖学金三等奖</h3>
+              </p>
+            </div>
+          </div>
+
+          <div class="award-item">
+            <div class="award-year">2023</div>
+            <div class="award-content">
+              <h3 class="award-title">校专业奖学金三等奖</h3>
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 hedonglitaozi 个人主页. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
 </html>
