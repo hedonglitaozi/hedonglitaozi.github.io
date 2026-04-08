@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人主页</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">我的主页</a>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">关于我</a></li>
+          <li><a href="#projects" class="nav-link">项目经历</a></li>
+          <li><a href="#awards" class="nav-link">获奖情况</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="about" class="section hero-section">
+        <div class="container">
+          <div class="hero-content fade-in">
+            <h1 class="hero-title">你好，我是<span class="highlight">张三</span></h1>
+            <p class="hero-subtitle">全栈开发工程师 | 创新者 | 终身学习者</p>
+            <p class="hero-description">
+              热爱技术，专注于构建优雅的解决方案。擅长前端开发、后端架构设计，
+              致力于用代码创造价值，用技术改变生活。
+            </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">项目</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">奖项</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">项目经历</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <h3 class="project-title">智能数据分析平台</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-description">
+                基于 Vue3 + Node.js 开发的企业级数据分析平台，支持实时数据可视化、
+                多维度分析和自定义报表生成，服务超过 10000+ 用户。
+              </p>
+              <div class="project-tags">
+                <span class="tag">Vue3</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">ECharts</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <h3 class="project-title">在线教育管理系统</h3>
+                <span class="project-year">2023</span>
+              </div>
+              <p class="project-description">
+                全栈开发的在线教育平台，包含课程管理、作业提交、在线测验等功能，
+                采用微服务架构，支持高并发访问。
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">MySQL</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <h3 class="project-title">移动端电商应用</h3>
+                <span class="project-year">2023</span>
+              </div>
+              <p class="project-description">
+                使用 React Native 开发的跨平台电商应用，集成支付、物流追踪、
+                用户评价等功能，优化性能达到流畅的用户体验。
+              </p>
+              <div class="project-tags">
+                <span class="tag">React Native</span>
+                <span class="tag">Redux</span>
+                <span class="tag">Firebase</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <h3 class="project-title">开源组件库</h3>
+                <span class="project-year">2022</span>
+              </div>
+              <p class="project-description">
+                设计并开发轻量级 UI 组件库，提供 30+ 常用组件，支持主题定制，
+                在 GitHub 上获得 2000+ stars。
+              </p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Vite</span>
+                <span class="tag">CSS-in-JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section id="awards" class="section awards-section">
+        <div class="container">
+          <h2 class="section-title">获奖情况</h2>
+          <div class="awards-timeline">
+            <div class="award-item">
+              <div class="award-year">2024</div>
+              <div class="award-content">
+                <h3 class="award-title">全国大学生软件创新大赛一等奖</h3>
+                <p class="award-description">
+                  凭借"智能健康管理系统"项目获得全国一等奖，该项目结合AI技术为用户提供个性化健康建议
+                </p>
+              </div>
+            </div>
+
+            <div class="award-item">
+              <div class="award-year">2023</div>
+              <div class="award-content">
+                <h3 class="award-title">ACM-ICPC 区域赛银奖</h3>
+                <p class="award-description">
+                  在国际大学生程序设计竞赛中展现出色的算法能力和团队协作精神
+                </p>
+              </div>
+            </div>
+
+            <div class="award-item">
+              <div class="award-year">2023</div>
+              <div class="award-content">
+                <h3 class="award-title">优秀开源贡献者</h3>
+                <p class="award-description">
+                  为多个知名开源项目贡献代码，被社区评为年度优秀贡献者
+                </p>
+              </div>
+            </div>
+
+            <div class="award-item">
+              <div class="award-year">2022</div>
+              <div class="award-content">
+                <h3 class="award-title">黑客马拉松最佳创意奖</h3>
+                <p class="award-description">
+                  在24小时黑客马拉松中开发创新解决方案，获得评委一致认可
+                </p>
+              </div>
+            </div>
+
+            <div class="award-item">
+              <div class="award-year">2022</div>
+              <div class="award-content">
+                <h3 class="award-title">国家奖学金</h3>
+                <p class="award-description">
+                  以优异的学术成绩和综合表现获得国家奖学金
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 个人主页. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
